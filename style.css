@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #524eb7;
+    padding: 0 10px;
+}
+.container{
+    background-color: #fff;
+    max-width: 1000px;
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+    overflow-x: hidden;
+}
+.container .icons{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 120px;
+    display: flex;
+    align-items: center;
+}
+.icons:first-child{
+    left: 0;
+    display: none;
+    background: linear-gradient(90deg,#fff 70%,transparent)
+}
+.icons:last-child{
+    right: 0;
+    justify-content: flex-end;
+    background: linear-gradient(-90deg, #fff 70%,transparent)
+}
+.icons i{
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.icons i:hover{
+    background-color: #efedfb;
+}
+.icons:first-child i{
+    margin-left: 15px;
+}
+.icons:last-child i{
+    margin-right: 15px;
+}
+.container .tab-box{
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.tab-box.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+}
+.tab-box .tab{
+    white-space: nowrap;
+    font-size: 1.2rem;
+    background-color: #f5f2f2;
+    border: 1px solid #d8d5f2;
+    padding: 13px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .5s linear;
+}
+.tab-box .tab:hover{
+    background-color: #e2e2e2;
+}
+.tab-box.dragging .tab{
+    user-select: none;
+    pointer-events: none;
+}
+.tab-box .tab.active{
+    background-color: #524eb7;
+    color: #fff;
+    border-color: transparent;
+}
